@@ -1,13 +1,17 @@
 import { ComingSoon } from "@/components/ComingSoon";
 import MarketingHome from "@/components/MarketingHome";
+import { isComingSoonEnabled } from "@/lib/is-coming-soon";
 
 /**
- * Vercel → Environment Variables → Production:
- * NEXT_PUBLIC_COMING_SOON = true  →  ziyaretçilere sadece "yakında" sayfası
- * NEXT_PUBLIC_COMING_SOON = false veya sil  →  tam tanıtım sitesi
+ * Vercel → Settings → Environment Variables → Production:
+ * COMING_SOON = true  →  "yakında" (önerilen)
+ * Yerel: NEXT_PUBLIC_COMING_SOON=true da çalışır.
+ * Değişiklikten sonra mutlaka Production için Redeploy.
  */
+export const dynamic = "force-dynamic";
+
 export default function Home() {
-  if (process.env.NEXT_PUBLIC_COMING_SOON === "true") {
+  if (isComingSoonEnabled()) {
     return <ComingSoon />;
   }
   return <MarketingHome />;

@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 /**
  * Yayına hazır değilken gösterilen tek sayfa.
- * Vercel → Environment Variables → NEXT_PUBLIC_COMING_SOON=true
+ * Vercel Production: COMING_SOON=true (veya NEXT_PUBLIC_COMING_SOON) + redeploy.
  */
 export function ComingSoon() {
   return (
@@ -18,12 +16,14 @@ export function ComingSoon() {
       <div className="lab-grid-bg pointer-events-none fixed inset-0" aria-hidden />
 
       <div className="relative z-10 max-w-lg">
-        <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-lab-cyan/30 to-lab-magenta/40 text-lg font-extrabold text-white ring-1 ring-white/20">
-          LE
+        <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-lab-cyan/30 to-lab-magenta/40 text-base font-extrabold tracking-tight text-white ring-1 ring-white/20">
+          CF
         </div>
-        <p className="mb-2 text-[0.65rem] font-bold tracking-[0.25em] text-lab-muted">CLINAPS</p>
+        <p className="mb-2 text-[0.65rem] font-bold tracking-[0.25em] text-lab-muted">
+          CLINAPS
+        </p>
         <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">
-          <span className="gradient-text">Lab Eğitim</span>
+          <span className="gradient-text">Clinaps Flow</span>
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-lab-muted">
           Web sitemiz şu an güncelleniyor. Kısa süre içinde buradayız.
